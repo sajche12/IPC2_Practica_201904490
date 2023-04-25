@@ -7,7 +7,7 @@ class Item:
     
     def __init__(self, item, cantidad_items, nivel1, nivel2, nivel3, costo_unidad) -> None: #Constructores del Item
         self.item = str(item)
-        self.cantidad_items = int(cantidad_items)
+        self.cantidad_items = float(cantidad_items)
         self.nivel1 = float(nivel1)
         self.nivel2 = float(nivel2)
         self.nivel3 = float(nivel3)
@@ -22,12 +22,15 @@ class Item:
             self.lista_temporal.agregar_nodo(margen1) 
         nivel1_ordenada = self.orden.ordenar(self.lista_temporal)
         
+        print("\nTOP 10 DE PRODUCTOS CON MAYOR MARGEN DE GANANCIA EN CADA NIVEL")
         conteo = 1
         print("-----------------")
         print("TOP 10 DEL NIVEL 1")
         for j in nivel1_ordenada:   #Imprimiendo el margen del nivel1 ya ordenado
             print(f"{conteo}. {j}")
             conteo += 1
+            if conteo >= 11:
+                break
         print("-----------------")
         
         self.lista_temporal.limpiar()   #Limpiando la lista
@@ -45,6 +48,8 @@ class Item:
         for k in nivel2_ordenada:   #Imprimiendo el margen del nivel2 ya ordenado
             print(f"{conteo}. {k}")
             conteo += 1
+            if conteo >= 11:
+                break
         print("-----------------")
         
         self.lista_temporal.limpiar()   #Limpiando la lista
@@ -62,6 +67,8 @@ class Item:
         for l in nivel3_ordenada:   #Imprimiendo el margen del nivel3 ya ordenado
             print(f"{conteo}. {l}")
             conteo += 1
+            if conteo >= 11:
+                break
         print("-----------------")
         
     def _calcular_valor_inventario(self, items:List[object]):   #Metodo para saber el top 10 de productos con mayor valor del inventario
@@ -80,4 +87,6 @@ class Item:
         for z in valor_ordenada:    #Imprimiendo los valores del inventario
             print(f"{conteo}. {z}")
             conteo += 1
+            if conteo >= 11:
+                break
         print("-----------------")

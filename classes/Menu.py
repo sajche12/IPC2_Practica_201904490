@@ -54,8 +54,8 @@ class Menu():
                 print("Seleccione el archivo a cargar...")
                 root = tk.Tk()
                 root.withdraw()
-                filename = "C:\\Users\\ACER\\Desktop\\Practica\\entrada_practica.xml"
-                #filename = filedialog.askopenfilename()
+                #filename = "C:\\Users\\ACER\\Desktop\\Practica\\entrada_practica.xml"
+                filename = filedialog.askopenfilename()
                 xml = ET.parse(filename)
                 self._extrar_datos(xml)
                 print("\n¡ARCHIVO CARGADO CORRECTAMENTE!")
